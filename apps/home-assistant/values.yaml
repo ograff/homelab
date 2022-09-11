@@ -1,0 +1,16 @@
+ingress:
+  main:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      nginx.org/websocket-services: home-assistant
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+    hosts:
+      - host: &host home-assistant.sananseline.olivergraff.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - secretName: home-assistant-tls-certificate
+        hosts:
+          - *host
