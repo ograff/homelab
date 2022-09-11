@@ -1,5 +1,5 @@
 gitops:
-  repo: http://gitea-http.gitea.svc.cluster.local:3000/ops/homelab
+  repo: https://github.com/ograff/homelab.git
   revision: master
 stacks:
   - name: bootstrap
