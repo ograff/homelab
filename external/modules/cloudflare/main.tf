@@ -1,5 +1,5 @@
 data "cloudflare_zone" "zone" {
-  name = "sananseline.olivergraff.com"
+  name = "olivergraff.com"
 }
 
 data "cloudflare_api_token_permission_groups" "all" {}
