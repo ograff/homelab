@@ -1,4 +1,12 @@
 argo-cd:
+  controller:
+    args:
+      operationProcessors: "50"
+      repoServerTimeoutSeconds: "420"
+      appResyncPeriod: "600"
+  repoServer:
+    replicas: 5
+
   server:
     extraArgs:
       - --insecure
