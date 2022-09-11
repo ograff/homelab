@@ -1,15 +1,4 @@
 argo-cd:
-  controller:
-    args:
-      operationProcessors: "50"
-      repoServerTimeoutSeconds: "420"
-      appResyncPeriod: "600"
-  repoServer:
-    replicas: 5
-  env:
-    - name: "ARGOCD_EXEC_TIMEOUT"
-      value: "5m"
-
   server:
     extraArgs:
       - --insecure
@@ -49,7 +38,15 @@ argo-cd:
     enabled: false
   controller:
     metrics: *metrics
+    args:
+      operationProcessors: "50"
+      repoServerTimeoutSeconds: "420"
+      appResyncPeriod: "600"
   repoServer:
     metrics: *metrics
+    replicas: 5
+    env:
+      - name: "ARGOCD_EXEC_TIMEOUT"
+        value: "5m"
   redis:
     metrics: *metrics
