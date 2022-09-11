@@ -20,3 +20,6 @@ plan: .terraform.lock.hcl
 
 apply: .terraform.lock.hcl namespaces
 	terraform apply -auto-approve
+
+replace-tunnel: .terraform.lock.hcl namespaces
+	terraform apply  --replace=module.cloudflare.cloudflare_argo_tunnel.homelab --replace=module.cloudflare.random_password.tunnel_secret

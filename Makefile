@@ -18,7 +18,7 @@ bootstrap:
 	make -C bootstrap
 
 external:
-	make -C external
+	make -C external replace-tunnel
 
 wait:
 	./scripts/wait-main-apps
