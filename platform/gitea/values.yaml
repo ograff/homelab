@@ -28,6 +28,10 @@ gitea:
         NAME: gitea
         PASSWD: gitea
         USER: gitea
+      cache:
+        ENABLED: true
+        ADAPTER: memcache
+        HOST: gitea-memcached.gitea.svc.cluster.local.
 
   persistence:
     storageClass: longhorn
