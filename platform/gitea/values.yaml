@@ -29,7 +29,7 @@ gitea:
         PASSWD: gitea
         USER: gitea
       cache:
-        ENABLED: true
+        ENABLED: false
         ADAPTER: memcache
         HOST: 10.42.0.143
 
