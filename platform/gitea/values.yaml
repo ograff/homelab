@@ -31,7 +31,7 @@ gitea:
       cache:
         ENABLED: true
         ADAPTER: memcache
-        HOST: gitea-memcached.gitea.svc.cluster.local.
+        HOST: 10.43.218.105
 
   persistence:
     storageClass: longhorn
