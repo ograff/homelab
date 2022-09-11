@@ -31,7 +31,7 @@ gitea:
       cache:
         ENABLED: true
         ADAPTER: memcache
-        HOST: 10.43.218.105
+        HOST: 10.42.0.143
 
   persistence:
     storageClass: longhorn
