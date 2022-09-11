@@ -29,9 +29,9 @@ gitea:
         PASSWD: gitea
         USER: gitea
       cache:
-        ENABLED: false
+        ENABLED: true
         ADAPTER: memcache
-        HOST: 10.42.0.143
+        HOST: 10.43.218.105:11211
 
   persistence:
     storageClass: longhorn
