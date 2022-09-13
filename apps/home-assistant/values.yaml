@@ -15,3 +15,6 @@ home-assistant:
         - secretName: home-assistant-tls-certificate
           hosts:
             - *host
+  persistence:
+    config:
+      enabled: true 
