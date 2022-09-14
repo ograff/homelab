@@ -24,7 +24,3 @@ home-assistant:
         value: "2"
   image:
     tag: 2022.9.3
-  lifecycle:
-    postStart:
-      exec:
-        command: ["/bin/sh", "-c", "sed -i 's~\\*\\*api_dict)~\\*\\*api_dict, ssl=False, proxy=\"http://192.168.32.2:9090\")~' /usr/local/lib/python3.10/site-packages/yalexs/api_async.py"]
