@@ -30,4 +30,4 @@ home-assistant:
         command: ["/bin/sh", "-c", "sed -i 's/\\*\\*api_dict)/\\*\\*api_dict, verify=False)/' /usr/local/lib/python3.10/site-packages/yalexs/api.py"]
   env:
     - name: HTTPS_PROXY
-      value: http://192.168.32.2:9090
+      value: https://192.168.32.2:9090
