@@ -22,3 +22,5 @@ home-assistant:
     options:
       - name: ndots
         value: "2"
+  image:
+    tag: 2022.9.3
