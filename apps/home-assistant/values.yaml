@@ -18,3 +18,7 @@ home-assistant:
   persistence:
     config:
       enabled: true 
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "2"
