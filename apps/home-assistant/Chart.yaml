@@ -1,4 +1,5 @@
 apiVersion: v2
+appVersion: 2022.9.3
 name: home-assistant
 version: 0.0.0
 dependencies:
