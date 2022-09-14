@@ -21,7 +21,7 @@ home-assistant:
   dnsConfig:
     options:
       - name: ndots
-        value: "2"
+        value: "1"
   image:
     tag: 2022.9.3
   addons:
