@@ -27,4 +27,4 @@ home-assistant:
   lifecycle:
     postStart:
       exec:
-        command: ["/bin/sh", "-c", "sed -i 's~\\*\\*api_dict)~\\*\\*api_dict, verify=False, proxies={\"https\": \"http://192.168.32.2:9090\"})~' /usr/local/lib/python3.10/site-packages/yalexs/api_async.py"]
+        command: ["/bin/sh", "-c", "sed -i 's~\\*\\*api_dict)~\\*\\*api_dict, ssl=False, proxy=\"http://192.168.32.2:9090\"})~' /usr/local/lib/python3.10/site-packages/yalexs/api_async.py"]
