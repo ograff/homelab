@@ -5,3 +5,7 @@ dependencies:
 - name: home-assistant
   version: 13.4.2
   repository: https://k8s-at-home.com/charts/
+dnsConfig:
+  options:
+    - name: ndots
+      value: "2"
