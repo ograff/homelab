@@ -24,3 +24,7 @@ home-assistant:
         value: "2"
   image:
     tag: 2022.9.3
+  lifecycle:
+    postStart:
+      exec:
+        command: ["/bin/sh", "-c", "sed -i 's/7cab4bbd-2693-4fc1-b99b-dec0fb20f9d4/d9984f29-07a6-816e-e1c9-44ec9d1be431/' /usr/local/lib/python3.10/site-packages/yalexs/api_common.py"]
