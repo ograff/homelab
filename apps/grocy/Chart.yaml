@@ -1,0 +1,8 @@
+apiVersion: v2
+appVersion: 3.3.1
+name: grocy
+version: 0.0.0
+dependencies:
+- name: grocy
+  version: 8.5.2
+  repository: https://k8s-at-home.com/charts/
