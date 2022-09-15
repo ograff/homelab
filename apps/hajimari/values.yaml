@@ -11,7 +11,7 @@ hajimari:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         hajimari.io/enable: 'false'
       hosts:
-        - host: &host home.sananseline.olivergraff.com
+        - host: &host home.2411.house
           paths:
             - path: /
               pathType: Prefix
@@ -27,7 +27,7 @@ hajimari:
       - name: Homelab
         links:
           - name: Documentation
-            url: https://homelab.sananseline.olivergraff.com
+            url: https://homelab.2411.house
           - name: Public GitHub repository
             url: https://github.com/khuedoan/homelab
       - name: Managed services

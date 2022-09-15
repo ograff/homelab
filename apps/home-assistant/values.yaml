@@ -6,10 +6,10 @@ home-assistant:
       annotations:
         nginx.org/websocket-services: home-assistant
         cert-manager.io/cluster-issuer: letsencrypt-prod
-        external-dns.alpha.kubernetes.io/target: "homelab-tunnel.sananseline.olivergraff.com"
+        external-dns.alpha.kubernetes.io/target: "homelab-tunnel.2411.house"
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       hosts:
-        - host: &host home-assistant.sananseline.olivergraff.com
+        - host: &host home-assistant.2411.house
           paths:
             - path: /
               pathType: Prefix

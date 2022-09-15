@@ -9,7 +9,7 @@ kube-prometheus-stack:
         hajimari.io/appName: Grafana
         hajimari.io/icon: chart-bar
       hosts:
-        - &host grafana.sananseline.olivergraff.com
+        - &host grafana.2411.house
       tls:
         - secretName: grafana-general-tls
           hosts:
@@ -21,7 +21,7 @@ kube-prometheus-stack:
     envFromSecret: grafana-secrets
     grafana.ini:
       server:
-        root_url: https://grafana.sananseline.olivergraff.com
+        root_url: https://grafana.2411.house
       auth.generic_oauth:
         enabled: true
         allow_sign_up: true
@@ -29,9 +29,9 @@ kube-prometheus-stack:
         client_id: grafana-sso
         client_secret: $__env{GRAFANA_SSO_CLIENT_SECRET}
         scopes: openid profile email groups
-        auth_url: https://dex.sananseline.olivergraff.com/auth
-        token_url: https://dex.sananseline.olivergraff.com/token
-        api_url: https://dex.sananseline.olivergraff.com/userinfo
+        auth_url: https://dex.2411.house/auth
+        token_url: https://dex.2411.house/token
+        api_url: https://dex.2411.house/userinfo
 
   prometheus:
     prometheusSpec:

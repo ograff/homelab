@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: &host registry.sananseline.olivergraff.com
+  - host: &host registry.2411.house
     http:
       paths:
       - pathType: ImplementationSpecific

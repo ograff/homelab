@@ -1,6 +1,6 @@
 trow:
   trow:
-    domain: registry.sananseline.olivergraff.com
+    domain: registry.2411.house
     # user: user
     # password: password
     validation:
@@ -20,7 +20,7 @@ trow:
       nginx.ingress.kubernetes.io/proxy-body-size: '0'
       hajimari.io/enable: 'false'
     hosts:
-      - host: &host registry.sananseline.olivergraff.com
+      - host: &host registry.2411.house
         paths:
           - /
     tls:
