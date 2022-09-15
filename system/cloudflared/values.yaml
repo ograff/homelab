@@ -7,7 +7,7 @@ cloudflared:
     tunnel: homelab
     ingress:
       - hostname: '*.sananseline.olivergraff.com'
-        service: https://ingress-nginx-controller.ingress-nginx
+        service: tcp://ingress-nginx-controller.ingress-nginx:443
         originRequest:
           noTLSVerify: true
       - service: http_status:404
