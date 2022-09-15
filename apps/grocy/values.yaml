@@ -1,4 +1,6 @@
 grocy:
+  image:
+    tag: 3.3.1
   ingress:
     main:
       enabled: true
