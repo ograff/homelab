@@ -1,5 +1,6 @@
 cloudflared:
-  tag: 1213-4b75943d5943
+  image:
+    tag: 1213-4b75943d5943
   credentials:
     existingSecret: cloudflared-credentials
   config:
