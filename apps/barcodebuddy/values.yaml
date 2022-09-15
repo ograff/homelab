@@ -1,0 +1,34 @@
+common:
+  image:
+    repository: "f0rc3/barcodebuddy-docker"
+    tag: v1.8.1.4
+    pullPolicy: IfNotPresent
+  env:
+  # -- Set the container timezone
+    TZ: UTC
+  service:
+    main:
+      ports:
+        http:
+          port: 80
+  ingress:
+    main:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        nginx.org/websocket-services: barcodebuddy
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      hosts:
+        - host: &host buddy.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
+          tls:
+            - secretName: barcodebuddy-tls-certificate
+          hosts:
+            - *host
+
+  persistence:
+    config:
+      enabled: true
+
