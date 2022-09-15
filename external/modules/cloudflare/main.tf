@@ -1,5 +1,5 @@
 data "cloudflare_zone" "zone" {
-  name = "olivergraff.com"
+  name = "2411.house"
 }
 
 data "cloudflare_api_token_permission_groups" "all" {}
@@ -34,7 +34,7 @@ resource "cloudflare_argo_tunnel" "homelab" {
 resource "cloudflare_record" "tunnel" {
   zone_id = data.cloudflare_zone.zone.id
   type    = "CNAME"
-  name    = "homelab-tunnel.sananseline"
+  name    = "homelab-tunnel"
   value   = "${cloudflare_argo_tunnel.homelab.id}.cfargotunnel.com"
   proxied = false
   ttl     = 1 # Auto
