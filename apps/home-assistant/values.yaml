@@ -29,3 +29,9 @@ home-assistant:
   addons:
     codeserver:
       enabled: true
+
+  # -- Enable devices to be discoverable
+  hostNetwork: true
+
+  # -- When hostNetwork is true set dnsPolicy to ClusterFirstWithHostNet
+  dnsPolicy: ClusterFirstWithHostNet
