@@ -26,6 +26,8 @@ paperless:
       size: 4Gi
   redis:
     enabled: true
+    replica:
+      replicaCount: 2
   persistence:
     data:
       enabled: true
