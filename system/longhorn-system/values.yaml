@@ -8,7 +8,8 @@ longhorn:
     enabled: true
     ingressClassName: nginx
     host: &host longhorn.2411.house
-    tlsSecret:
+    tlsSecret: longhorn-tls-certificate
+    tls: true
 
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
