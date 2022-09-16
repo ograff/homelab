@@ -21,10 +21,15 @@ paperless:
     PAPERLESS_REDIS: redis://paperless-redis-master
   postgresql:
     enabled: true
+    persistence:
+      enabled: true
+      size: 4Gi
   redis:
     enabled: true
   persistence:
     data:
       enabled: true
+      size: 4Gi
     media:
       enabled: true
+      size: 4Gi
