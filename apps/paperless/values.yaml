@@ -17,8 +17,8 @@ paperless:
           hosts:
             - *host
   env:
-    PAPERLESS_DBHOST: postgresql
-    PAPERLESS_REDIS: redis
+    PAPERLESS_DBHOST: paperless-postgresql
+    PAPERLESS_REDIS: paperless-redis-master
   postgresql:
     enabled: true
   redis:
