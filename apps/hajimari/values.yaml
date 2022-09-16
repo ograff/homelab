@@ -15,10 +15,15 @@ hajimari:
           paths:
             - path: /
               pathType: Prefix
+        - host: &host2 2411.house
+          paths:
+            - path: /
+              pathType: Prefix
       tls:
         - secretName: hajimari-tls-certificate
           hosts:
             - *host
+            - *host2
   hajimari:
     defaultEnable: true
     namespaceSelector:
