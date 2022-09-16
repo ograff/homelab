@@ -16,5 +16,10 @@ paperless:
         - secretName: paperless-tls-certificate
           hosts:
             - *host
+  env:
+    PAPERLESS_DBHOST: postgresql
+    PAPERLESS_REDIS: redis
   postgresql:
+    enabled: true
+  redis:
     enabled: true
