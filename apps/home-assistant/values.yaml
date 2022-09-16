@@ -8,6 +8,8 @@ home-assistant:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         external-dns.alpha.kubernetes.io/target: "homelab-tunnel.2411.house"
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+        hajimari.io/appName: Home Assistant
+        hajimari.io/icon: home-assistant
       hosts:
         - host: &host home-assistant.2411.house
           paths:

@@ -18,6 +18,8 @@ common:
       annotations:
         nginx.org/websocket-services: barcodebuddy
         cert-manager.io/cluster-issuer: letsencrypt-prod
+        hajimari.io/appName: Barcode Buddy
+        hajimari.io/icon: barcode-scan
       hosts:
         - host: &host buddy.2411.house
           paths:
