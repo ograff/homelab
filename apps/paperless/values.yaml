@@ -7,6 +7,7 @@ paperless:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         hajimari.io/appName: Paperless
         hajimari.io/icon: file-document
+        nginx.ingress.kubernetes.io/proxy-body-size: 100m
       hosts:
         - host: &host paperless.2411.house
           paths:
