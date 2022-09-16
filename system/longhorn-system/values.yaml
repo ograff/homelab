@@ -4,3 +4,13 @@ longhorn:
   persistence:
     # If you have three or more nodes for storage, use 3; otherwise use 2
     defaultClassReplicaCount: 2  # TODO run DR test to see if we actually need 3
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    host: &host longhorn.2411.house
+    tlsSecret:
+
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      hajimari.io/appName: Longhorn
+      hajimari.io/icon: harddisk
