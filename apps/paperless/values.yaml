@@ -23,3 +23,8 @@ paperless:
     enabled: true
   redis:
     enabled: true
+  persistence:
+    data:
+      enabled: true
+    media:
+      enabled: true
