@@ -32,7 +32,7 @@ unifi:
     persistence:
       enabled: true
     image:
-      tag: 4.4.6
+      tag: 4.4.15-debian-10-r8
     livenessProbe:
       enabled: false
     readinessProbe:
