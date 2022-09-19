@@ -1,0 +1,33 @@
+unifi:
+  image:
+    tag: v7.2.92
+  ingress:
+    main:
+      ingressClassName: nginx
+      enabled: true
+      annotations: 
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        hajimari.io/appName: Unifi
+        hajimari.io/icon: access-point
+      hosts:
+        host: &host unifi.2411.house
+        paths:
+          path: /
+          pathType: Prefix
+      tls:
+        - secretName: unifi-tls-certificate
+          hosts:
+            - *host
+    portal:
+      enabled: false
+
+  persistence:
+    data:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 4Gi
+      retain: true
+  mongodb:
+    enabled: true
+    persistence:
+      enabled: true
