@@ -37,3 +37,6 @@ unifi:
       enabled: false
     readinessProbe:
       enabled: false
+  service:
+    main:
+      type: LoadBalancer
