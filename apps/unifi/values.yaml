@@ -31,3 +31,5 @@ unifi:
     enabled: true
     persistence:
       enabled: true
+    image:
+      tag: 4.4.6
