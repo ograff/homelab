@@ -40,3 +40,4 @@ unifi:
   service:
     main:
       type: LoadBalancer
+      loadBalancerIP: 192.168.31.225
