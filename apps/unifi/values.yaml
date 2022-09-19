@@ -10,10 +10,10 @@ unifi:
         hajimari.io/appName: Unifi
         hajimari.io/icon: access-point
       hosts:
-        host: &host unifi.2411.house
-        paths:
-          path: /
-          pathType: Prefix
+        - host: &host unifi.2411.house
+          paths:
+            path: /
+            pathType: Prefix
       tls:
         - secretName: unifi-tls-certificate
           hosts:
