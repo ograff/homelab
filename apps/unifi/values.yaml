@@ -10,7 +10,7 @@ unifi:
         hajimari.io/appName: Unifi
         hajimari.io/icon: access-point
       hosts:
-        - host: &host unifi.2411.house
+        - host: &host unifi-controller.2411.house
           paths:
             - path: /
               pathType: Prefix
