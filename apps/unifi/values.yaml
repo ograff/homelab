@@ -33,3 +33,7 @@ unifi:
       enabled: true
     image:
       tag: 4.4.6
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
