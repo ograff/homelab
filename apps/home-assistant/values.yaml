@@ -28,7 +28,7 @@ home-assistant:
         value: "1"
   image:
     repository: ghcr.io/home-assistant/home-assistant
-    tag: 2022.9.3
+    tag: 2022.9.5
   addons:
     codeserver:
       enabled: true
