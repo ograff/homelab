@@ -30,7 +30,7 @@ paperless:
       size: 4Gi
     image:
       repository: bitnami/postgresql
-      tag: 11.17.0
+      tag: 14.5.0
   redis:
     enabled: true
     replica:
