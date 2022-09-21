@@ -1,4 +1,7 @@
 paperless:
+  image:
+    repository: ghcr.io/paperless-ngx/paperless-ngx
+    tag: 1.8.0
   ingress:
     main:
       enabled: true
