@@ -42,3 +42,6 @@ paperless:
     media:
       enabled: true
       size: 4Gi
+    consume:
+      enabled: true
+      size: 1Gi
