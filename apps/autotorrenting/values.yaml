@@ -1,0 +1,68 @@
+sonarr:
+  image:
+    repository: lscr.io/linuxserver/sonarr
+    tag: 3.0.9
+  ingress:
+    main:
+      enabled: true
+  persistence:
+    config:
+      enabled: true
+      retain: true
+      size: 4Gi
+
+    media: &media_mount
+      enabled: true
+      retain: true
+      mountPath: /mnt/MediaAndTorrents
+      type: nfs
+      server: truenas.2411.house.
+      path: /mnt/MainPool/BigTank/MediaAndTorrents
+  ingress:
+    main:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        hajimari.io/appName: Sonarr
+        #hajimari.io/icon: file-document
+      hosts:
+        - host: &sonarr_host sonarr.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: sonarr-tls-certificate
+          hosts:
+            - *sonarr_host
+radarr:
+  image:
+    repository: lscr.io/linuxserver/radarr
+    tag: 4.1.0
+  ingress:
+    main:
+      enabled: true
+  persistence:
+    config:
+      enabled: true
+      retain: true
+      size: 4Gi
+
+    media: *media_mount
+  ingress:
+    main:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        hajimari.io/appName: Radarr
+        #hajimari.io/icon: file-document
+      hosts:
+        - host: &radarr_host radarr.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: radarr-tls-certificate
+          hosts:
+            - *radarr_host

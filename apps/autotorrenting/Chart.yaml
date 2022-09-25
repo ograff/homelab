@@ -1,0 +1,10 @@
+apiVersion: v2
+name: autotorrenting
+version: 0.0.0
+dependencies:
+- name: radarr
+  version: 16.3.2
+  repository: https://k8s-at-home.com/charts/
+- name: sonarr
+  version: 16.3.2
+  repository: https://k8s-at-home.com/charts/
