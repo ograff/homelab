@@ -35,6 +35,10 @@ sonarr:
         - secretName: sonarr-tls-certificate
           hosts:
             - *sonarr_host
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "1"
 radarr:
   image:
     repository: lscr.io/linuxserver/radarr
@@ -66,3 +70,7 @@ radarr:
         - secretName: radarr-tls-certificate
           hosts:
             - *radarr_host
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "1"
