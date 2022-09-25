@@ -11,7 +11,6 @@ paperless:
         hajimari.io/appName: Paperless
         hajimari.io/icon: file-document
         nginx.ingress.kubernetes.io/proxy-body-size: 100m
-        nginx.ingress.kubernetes.io/ssl-redirect: "false"
       hosts:
         - host: &host paperless.2411.house
           paths:
@@ -21,6 +20,17 @@ paperless:
         - secretName: paperless-tls-certificate
           hosts:
             - *host
+    secondary:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        hajimari.io/enable: false
+        nginx.ingress.kubernetes.io/proxy-body-size: 100m
+      hosts:
+        - host: &host paperless-scanner.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
   env:
     PAPERLESS_DBHOST: paperless-postgresql
     PAPERLESS_REDIS: redis://paperless-redis-master
