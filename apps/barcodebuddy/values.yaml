@@ -33,4 +33,8 @@ common:
   persistence:
     config:
       enabled: true
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "1"
 
