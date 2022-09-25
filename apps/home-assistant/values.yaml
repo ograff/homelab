@@ -22,6 +22,8 @@ home-assistant:
   persistence:
     config:
       enabled: true 
+      size: 8Gi
+
   dnsConfig:
     options:
       - name: ndots
