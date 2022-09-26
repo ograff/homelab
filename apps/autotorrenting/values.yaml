@@ -114,7 +114,7 @@ flaresolverr:
     tag: v2.2.9
   ingress:
     main:
-      enabled: true
+      enabled: false
   dnsConfig:
     options:
       - name: ndots
