@@ -11,3 +11,6 @@ dependencies:
 - name: jackett
   version: 11.7.2
   repository: https://k8s-at-home.com/charts/
+- name: flaresolverr
+  version: 5.4.2
+  repository: https://k8s-at-home.com/charts/

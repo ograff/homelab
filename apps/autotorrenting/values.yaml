@@ -108,3 +108,14 @@ jackett:
     options:
       - name: ndots
         value: "1"
+flaresolverr:
+  image:
+    repository: ghcr.io/flaresolverr/flaresolverr
+    tag: 2.2.9
+  ingress:
+    main:
+      enabled: true
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "1"
