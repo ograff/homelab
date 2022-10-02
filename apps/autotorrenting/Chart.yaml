@@ -14,3 +14,6 @@ dependencies:
 - name: flaresolverr
   version: 5.4.2
   repository: https://k8s-at-home.com/charts/
+- name: bazarr
+  version: 10.6.2
+  repository: https://k8s-at-home.com/charts/
