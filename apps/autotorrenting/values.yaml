@@ -141,7 +141,7 @@ bazarr:
         hajimari.io/appName: Bazarr
         #hajimari.io/icon: file-document
       hosts:
-        - host: &bazar_host bazarr.2411.house
+        - host: &bazarr_host bazarr.2411.house
           paths:
             - path: /
               pathType: Prefix
