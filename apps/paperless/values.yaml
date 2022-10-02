@@ -55,4 +55,4 @@ paperless:
       size: 4Gi
     consume:
       enabled: true
-      size: 1Gi
+      size: 4Gi
