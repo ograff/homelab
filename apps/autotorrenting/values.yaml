@@ -131,6 +131,13 @@ bazarr:
       enabled: true
       retain: true
       size: 4Gi
+    media: &media_mount
+      enabled: true
+      retain: true
+      mountPath: /mnt/MediaAndTorrents
+      type: nfs
+      server: truenas.2411.house.
+      path: /mnt/MainPool/BigTank/MediaAndTorrents
 
   ingress:
     main:
