@@ -8,6 +8,7 @@ common:
     TZ: UTC
     BBUDDY_TRUSTED_PROXIES: "192.168.31.0/24"
     BBUDDY_AUTHENTICATION_BYPASS_NETS: "192.168.30.0/24"
+    BBUDDY_DISABLE_AUTHENTICATION: true
   service:
     main:
       ports:
