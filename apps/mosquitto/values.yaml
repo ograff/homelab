@@ -1,0 +1,15 @@
+mosquitto:
+  image:
+    repository: eclipse-mosquitto
+    tag: 2.0.15
+  persistence:
+    data:
+      enabled: true
+      accessMode: ReadWriteOnce
+      retain: true
+      size: 1Gi
+    configinc:
+      enabled: true
+      accessMode: ReadWriteOnce
+      retain: true
+      size: 1Gi
