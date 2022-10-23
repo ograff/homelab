@@ -1,0 +1,38 @@
+zigbee2mqtt:
+  image:
+    repository: koenkk/zigbee2mqtt
+    tag: 1.28.0
+  ingress:
+    main:
+      enabled: true
+      ingressClassName: nginx
+      annotations: 
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        hajimari.io/appName: Zigbee
+        hajimari.io/icon: zigbee
+      hosts:
+        - host: &host zigbee.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: zigbee-tls-certificate
+          hosts:
+            - *host
+  persistence:
+    data:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 4Gi
+      retain: true
+  config:
+    homeassistant: true
+    permit_join: true
+    mqtt:
+      server: mosquitto.mosquitto.svc.cluster.local
+      client_id: zigbee2mqtt
+      include_device_information: true
+    zigbee:
+      permit_join: true
+
+
