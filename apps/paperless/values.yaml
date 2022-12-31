@@ -1,7 +1,7 @@
 paperless:
   image:
     repository: ghcr.io/paperless-ngx/paperless-ngx
-    tag: 1.9.2
+    tag: 1.11.2
   ingress:
     main:
       enabled: true
@@ -41,7 +41,7 @@ paperless:
       size: 4Gi
     image:
       repository: bitnami/postgresql
-      tag: 11.17.0
+      tag: 11.18.0
   redis:
     enabled: true
     replica:
