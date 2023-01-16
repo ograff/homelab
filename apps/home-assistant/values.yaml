@@ -1,7 +1,7 @@
 home-assistant:
   affinity:
     nodeAffinity:
-      requrieddDuringSchedulingIgnoredDuringExecution:
+      requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
           - key: power
