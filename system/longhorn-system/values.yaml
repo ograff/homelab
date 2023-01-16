@@ -15,3 +15,43 @@ longhorn:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       hajimari.io/appName: Longhorn
       hajimari.io/icon: harddisk
+raw:
+  resources:
+      - apiVersion: v1
+        data:
+          PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
+        kind: ConfigMap
+        metadata:
+          name: longhorn-custom-path
+          namespace: longhorn-system
+      - apiVersion: kyverno.io/v1
+        kind: ClusterPolicy
+        metadata:
+          annotations:
+              policies.kyverno.io/category: Other
+              policies.kyverno.io/description: Longhorn invokes executables on the host system, and needs to be aware of the host systems PATH. This modifies all deployments such that the PATH is explicitly set to support NixOS based systems.
+              policies.kyverno.io/subject: Pod
+              policies.kyverno.io/title: Add Environment Variables from ConfigMap
+          name: add-host-path-to-longhorn
+        spec:
+          rules:
+              - match:
+                  resources:
+                      kinds:
+                          - Pod
+                      namespaces:
+                          - longhorn-system
+                mutate:
+                  patchStrategicMerge:
+                      spec:
+                          containers:
+                              - (name): '*'
+                                envFrom:
+                                  - configMapRef:
+                                      name: longhorn-custom-path
+                          initContainers:
+                              - (name): '*'
+                                envFrom:
+                                  - configMapRef:
+                                      name: longhorn-custom-path
+                name: add-env-vars
