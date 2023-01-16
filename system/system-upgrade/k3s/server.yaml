@@ -13,7 +13,7 @@ spec:
       - key: autoupgrade
         operator: In
         values:
-        - true
+        - "true"
   serviceAccountName: system-upgrade
   concurrency: 1
   cordon: true
