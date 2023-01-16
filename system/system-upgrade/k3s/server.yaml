@@ -12,7 +12,8 @@ spec:
         operator: Exists
       - key: autoupgrade
         operator: In
-        values: true
+        values:
+        - true
   serviceAccountName: system-upgrade
   concurrency: 1
   cordon: true
