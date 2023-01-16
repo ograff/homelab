@@ -10,6 +10,9 @@ spec:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
+      - key: autoupgrade
+        operator: In
+        values: true
   serviceAccountName: system-upgrade
   concurrency: 1
   cordon: true

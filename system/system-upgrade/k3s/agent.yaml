@@ -10,6 +10,9 @@ spec:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
         operator: DoesNotExist
+      - key: autoupgrade
+        operator: In
+        values: true
   serviceAccountName: system-upgrade
   prepare:
     image: rancher/k3s-upgrade
