@@ -3,12 +3,12 @@ home-assistant:
     nodeAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
-      preference:
-        matchExpressions:
-        - key: power
-          operator: In
-          values:
-          - high
+        preference:
+          matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   ingress:
     main:
       enabled: true
