@@ -3,5 +3,5 @@ name: longhorn
 version: 0.0.0
 dependencies:
   - name: kyverno
--   repository: https://kyverno.github.io/kyverno
--   version: 2.6.1
+    repository: https://kyverno.github.io/kyverno
+    version: 2.6.1
