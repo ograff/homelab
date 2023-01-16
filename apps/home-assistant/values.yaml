@@ -1,10 +1,9 @@
 home-assistant:
   affinity:
     nodeAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 90
-        preference:
-          matchExpressions:
+      requrieddDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
           - key: power
             operator: In
             values:
