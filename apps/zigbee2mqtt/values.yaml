@@ -1,4 +1,13 @@
 zigbee2mqtt:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   image:
     repository: koenkk/zigbee2mqtt
     tag: 1.28.4
