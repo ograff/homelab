@@ -1,4 +1,13 @@
 sonarr:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   image:
     repository: lscr.io/linuxserver/sonarr
     tag: 3.0.9
@@ -40,6 +49,15 @@ sonarr:
       - name: ndots
         value: "1"
 radarr:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   image:
     repository: lscr.io/linuxserver/radarr
     tag: 4.2.4
@@ -75,6 +93,15 @@ radarr:
       - name: ndots
         value: "1"
 jackett:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   image:
     repository: lscr.io/linuxserver/jackett
     tag: 0.20.2464
