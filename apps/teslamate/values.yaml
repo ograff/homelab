@@ -17,6 +17,7 @@ teslamate:
     # -- Disables the MQTT feature if `true`
     DISABLE_MQTT: "false"
     MQTT_HOST: mosquitto.mosquitto.svc.cluster.local
+    ENCRYPTION_KEY: 7f4crTa8PDNuwIaulFWmDxPxlm4N5+vgyi3VTnn+v2rIb+bEjJiKQ7AnFe18UDh4
   service:
     main:
       ports:
