@@ -1,0 +1,59 @@
+teslamate:
+  image:
+    repository: teslamate/teslamate
+    tag: 1.23.4
+    pullPolicy: IfNotPresent
+  env:
+    # -- Set the container timezone
+    TZ: UTC
+    # -- Postgres database hostname
+    DATABASE_HOST: '{{ include "common.names.fullname" .}}-postgresql'
+    # -- Postgres database user name
+    DATABASE_USER: postgres
+    # -- Postgres database password
+    DATABASE_PASS: "{{ .Values.postgresql.auth.postgresPassword }}"
+    # -- Postgres database password
+    DATABASE_NAME: "{{ .Values.postgresql.auth.database }}"
+    # -- Disables the MQTT feature if `true`
+    DISABLE_MQTT: "false"
+  service:
+    main:
+      ports:
+        http:
+          port: 4000
+  ingress:
+    main:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        nginx.org/websocket-services: teslamate
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        external-dns.alpha.kubernetes.io/target: "homelab-tunnel.2411.house"
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+        hajimari.io/appName: Teslamate
+        hajimari.io/icon: car-connected
+      hosts:
+        - host: &host teslamate.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: teslamate-tls-certificate
+          hosts:
+            - *host
+  persistence:
+    config:
+      enabled: true 
+  postgresql:
+    enabled: true
+    auth:
+      postgresPassword: teslamate-pass
+      database: teslamate
+    primary:
+      persistence:
+        enabled: true
+        size: 32Gi
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "1"

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: teslamate
+version: 0.0.0
+dependencies:
+- name: teslamate
+  version: 7.1.2
+  repository: https://geek-cookbook.github.io/charts/
