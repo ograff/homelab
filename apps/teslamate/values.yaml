@@ -63,7 +63,7 @@ teslamate:
 grafana:
   image:
     repository: teslamate/grafana
-    tag: 1.27
+    tag: "1.27"
     pullPolicy: IfNotPresent
   env:
     # -- Postgres database hostname
