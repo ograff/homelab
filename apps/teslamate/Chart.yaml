@@ -5,3 +5,6 @@ dependencies:
 - name: teslamate
   version: 7.1.2
   repository: https://geek-cookbook.github.io/charts/
+- name: grafana
+  version: 6.57.3
+  repository: https://grafana.github.io/helm-charts
