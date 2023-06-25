@@ -5,7 +5,7 @@ teslamate:
     pullPolicy: IfNotPresent
   env:
     # -- Set the container timezone
-    TZ: UTC
+    TZ: America/Los_Angeles
     # -- Postgres database hostname
     DATABASE_HOST: '{{ include "common.names.fullname" .}}-postgresql'
     # -- Postgres database user name
@@ -16,6 +16,7 @@ teslamate:
     DATABASE_NAME: "{{ .Values.postgresql.auth.database }}"
     # -- Disables the MQTT feature if `true`
     DISABLE_MQTT: "false"
+    MQTT_HOST: mosquitto.mosquitto.svc.cluster.local
   service:
     main:
       ports:
