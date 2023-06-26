@@ -1,4 +1,13 @@
 teslamate:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   image:
     repository: teslamate/teslamate
     tag: 1.27.3
@@ -47,6 +56,15 @@ teslamate:
     config:
       enabled: true 
   postgresql:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: power
+              operator: In
+              values:
+              - high
     enabled: true
     auth:
       postgresPassword: teslamate-pass
@@ -63,6 +81,15 @@ teslamate:
         value: "1"
 
 grafana:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: power
+            operator: In
+            values:
+            - high
   image:
     repository: teslamate/grafana
     tag: "1.27"
