@@ -67,7 +67,7 @@ grafana:
     pullPolicy: IfNotPresent
   env:
     # -- Postgres database hostname
-    DATABASE_HOST: '{{ include "common.names.fullname" .}}-postgresql'
+    DATABASE_HOST: 'teslamate-postgresql'
     # -- Postgres database user name
     DATABASE_USER: postgres
     # -- Postgres database password
