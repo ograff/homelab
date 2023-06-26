@@ -9,9 +9,9 @@ teslamate:
     # -- Postgres database hostname
     DATABASE_HOST: '{{ include "common.names.fullname" .}}-postgresql'
     # -- Postgres database user name
-    DATABASE_USER: postgres
+    DATABASE_USER: teslamate
     # -- Postgres database password
-    DATABASE_PASS: "{{ .Values.postgresql.auth.postgresPassword }}"
+    DATABASE_PASS: "{{ .Values.postgresql.auth.password }}"
     # -- Postgres database password
     DATABASE_NAME: "{{ .Values.postgresql.auth.database }}"
     # -- Disables the MQTT feature if `true`
@@ -50,6 +50,8 @@ teslamate:
     enabled: true
     auth:
       postgresPassword: teslamate-pass
+      username: teslamate
+      password: teslamate-pass
       database: teslamate
     primary:
       persistence:
@@ -69,9 +71,9 @@ grafana:
     # -- Postgres database hostname
     DATABASE_HOST: 'teslamate-postgresql'
     # -- Postgres database user name
-    DATABASE_USER: postgres
+    DATABASE_USER: teslamate
     # -- Postgres database password
-    DATABASE_PASS: "{{ .Values.postgresql.auth.postgresPassword }}"
+    DATABASE_PASS: "{{ .Values.postgresql.auth.password }}"
     # -- Postgres database password
     DATABASE_NAME: "{{ .Values.postgresql.auth.database }}"
     # -- Disables the MQTT feature if `true`
