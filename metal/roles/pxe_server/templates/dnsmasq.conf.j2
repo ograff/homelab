@@ -2,7 +2,7 @@
 port=0
 {% if dhcp_proxy == true %}
 # We're DHCP proxying on the network of the homelab host
-dhcp-range={{ ansible_default_ipv4.address }},proxy
+dhcp-range=192.168.31.6,proxy
 pxe-service=X86-64_EFI, "Boot From Network, (UEFI)", grubx64.efi
 {% else %}
 # We're DHCP configuring on this range
@@ -24,3 +24,4 @@ log-facility=-
 # Enable TFTP server
 enable-tftp
 tftp-root=/tftp
+interface=cluster_vlan
