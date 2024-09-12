@@ -4,7 +4,7 @@ rook-ceph:
 rook-ceph-cluster:
   monitoring:
     enabled: true
-    createPrometheusRules: true
+    createPrometheusRules: false
   cephClusterSpec:
     mon:
       count: 1
