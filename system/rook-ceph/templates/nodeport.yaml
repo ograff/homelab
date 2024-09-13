@@ -17,4 +17,6 @@ spec:
     rook_cluster: rook-ceph
     mgr_role: active
   sessionAffinity: None
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerClass: tailscale
+
