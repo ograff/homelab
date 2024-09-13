@@ -12,7 +12,6 @@ rook-ceph-cluster:
       count: 1
     dashboard:
       enabled: true
-      port: 8443
     logCollector:
       enabled: false
     removeOSDsIfOutAndSafeToRemove: true
