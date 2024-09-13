@@ -56,7 +56,7 @@ argocd-apps:
           syncPolicy:
             automated:
               prune: true
-              selfHeal: true
+              selfHeal: false
             retry:
               limit: 10
               backoff:
