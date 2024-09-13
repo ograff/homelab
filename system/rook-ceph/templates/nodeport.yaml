@@ -9,12 +9,13 @@ metadata:
 spec:
   ports:
   - name: dashboard
-    port: 8080
+    port: 8443
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8443
   selector:
     app: rook-ceph-mgr
     rook_cluster: rook-ceph
     mgr_role: active
   sessionAffinity: None
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerClass: tailscale

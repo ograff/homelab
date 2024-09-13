@@ -11,8 +11,7 @@ rook-ceph-cluster:
     mgr:
       count: 1
     dashboard:
-      ssl: false
-      port: 8080
+      enabled: true
     logCollector:
       enabled: false
     removeOSDsIfOutAndSafeToRemove: true
