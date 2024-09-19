@@ -1,3 +1,0 @@
-volsync:
-  image:
-    repository: zimbres/volsync
