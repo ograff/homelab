@@ -30,4 +30,4 @@ app-template:
       tls:
         - hosts:
             - *host
-          secretName: speedtest_tls_secret
+          secretName: speedtest-tls-secret
