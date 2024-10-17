@@ -12,11 +12,11 @@ argo-cd:
           - /status
   server:
     ingress:
-      enabled: false
-     #ingressClassName: nginx
-     #annotations:
-     #  cert-manager.io/cluster-issuer: letsencrypt-prod
-     #tls: true
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      tls: true
     metrics: &metrics
       enabled: true
       serviceMonitor:
