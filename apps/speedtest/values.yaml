@@ -16,8 +16,11 @@ app-template:
     main:
       enabled: true
       className: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      tls: true
       hosts:
-        - host: &host speedtest
+        - host: &host speedtest.2411.house
           paths:
             - path: /
               pathType: Prefix
