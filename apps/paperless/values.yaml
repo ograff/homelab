@@ -121,6 +121,8 @@ paperless-ngx:
   #    [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/redis)
   # @default -- See [values.yaml](./values.yaml)
   redis:
+    image:
+      tag: 7.2.4-debian-12-r12
     enabled: true
     auth:
       enabled: true
