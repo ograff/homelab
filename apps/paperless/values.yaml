@@ -27,6 +27,7 @@ paperless-ngx:
     # @default -- See [values.yaml](./values.yaml)
     main:
       enabled: true
+      className: nginx
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: 64m
         cert-manager.io/cluster-issuer: letsencrypt-prod
