@@ -26,8 +26,8 @@ paperless-ngx:
     # -- Enable and configure ingress settings for the chart under this key.
     # @default -- See [values.yaml](./values.yaml)
     main:
+      ingressClassName: nginx
       enabled: true
-      className: nginx
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: 64m
         cert-manager.io/cluster-issuer: letsencrypt-prod
