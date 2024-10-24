@@ -11,20 +11,27 @@ app-template:
             REDIS_PORT: 6379
             REDIS_PASSWORD:
               valueFrom:
-                name: redis-pass
-                key: redis-pass
+                secretKeyRef:
+                  name: redis-pass
+                  key: redis-pass
             POSTGRES_DB: ghostfolio
             POSTGRES_USER: ghostfolio
             POSTGRES_PASSWORD:
-              name: postgres-pass
-              key: userpass
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-pass
+                  key: userpass
             ACCESS_TOKEN_SALT:
-              name: salts
-              key: access-token
+              valueFrom:
+                secretKeyRef:
+                name: salts
+                key: access-token
             DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@ghostfolio-postgresql:5432/${POSTGRES_DB}?connect_timeout=300&sslmode=prefer"
             JWT_SECRET_KEY: 
-              name: salts
-              key: jwt-token
+              valueFrom:
+                secretKeyRef:
+                  name: salts
+                  key: jwt-token
   service:
     main:
       ports:
