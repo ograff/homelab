@@ -1,0 +1,76 @@
+app-template:
+  controllers:
+    main:
+      containers:
+        main:
+          image:
+            repository: docker.io/ghostfolio/ghostfolio
+            tag: 2.118.0
+          env:
+            REDIS_HOST: ghostfolio-redis-master
+            REDIS_PORT: 6379
+            REDIS_PASSWORD:
+              valueFrom:
+                name: redis-pass
+                key: redis-pass
+            POSTGRES_DB: ghostfolio
+            POSTGRES_USER: ghostfolio
+            POSTGRES_PASSWORD:
+              name: postgres-pass
+              key: userpass
+            ACCESS_TOKEN_SALT:
+              name: salts
+              key: access-token
+            DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@ghostfolio-postgresql:5432/${POSTGRES_DB}?connect_timeout=300&sslmode=prefer"
+            JWT_SECRET_KEY: 
+              name: salts
+              key: jwt-token
+  service:
+    main:
+      ports:
+        http:
+          port: 3333
+          protocol: HTTP
+  ingress:
+    main:
+      enabled: true
+      className: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        external-dns.alpha.kubernetes.io/target: "tunnel.2411.house"
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+      hosts:
+        - host: &host folio.2411.house
+          paths:
+            - path: /
+              pathType: Prefix
+              service:
+                name: main
+                port: http
+      tls:
+        - hosts:
+            - *host
+          secretName: ghostfolio-tls-certificate
+postgres:
+  enabled: true
+  auth:
+    database: ghostfolio
+    username: ghostfolio
+    existingSecret: postgres-pass
+    secretKeys:
+      userPasswordKey: "userpass"
+  primary:
+    persistence:
+      enabled: true
+redis:
+  enabled: true
+  auth:
+    enabled: true
+    username: ""
+    existingSecret: redis-pass
+    existingSecretPasswordKey: redis-pass
+  master:
+    persistence:
+      enabled: true
+  replica:
+    replicaCount: 0
