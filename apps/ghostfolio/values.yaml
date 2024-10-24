@@ -24,8 +24,8 @@ app-template:
             ACCESS_TOKEN_SALT:
               valueFrom:
                 secretKeyRef:
-                name: salts
-                key: access-token
+                  name: salts
+                  key: access-token
             DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@ghostfolio-postgresql:5432/${POSTGRES_DB}?connect_timeout=300&sslmode=prefer"
             JWT_SECRET_KEY: 
               valueFrom:
