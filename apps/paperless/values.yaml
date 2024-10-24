@@ -13,7 +13,7 @@ paperless-ngx:
     # -- Set the container timezone
     TZ: America/Los_Angeles
     # PAPERLESS_SECRET_KEY: ""
-    PAPERLESS_DATE_ORDER=MDY
+    PAPERLESS_DATE_ORDER: MDY
 
   service:
     # -- Configures service settings for the chart.
