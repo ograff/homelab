@@ -12,6 +12,7 @@ n8n:
   extraEnv:
   # Set this if running behind a reverse proxy and the external port is different from the port n8n runs on
     WEBHOOK_URL: "https://n8n.2411.house/"
+    DB_POSTGRESDB_USER: n8n
     DB_POSTGRESDB_PASSWORD: foobar
 
   ## Common Kubernetes Config Settings
