@@ -87,10 +87,6 @@ n8n:
       - hosts:
           - *host
         secretName: n8n-tls-secret
-  lifecycle:
-   postStart:
-     exec:
-       command: ["/bin/sed", "-i", "s/ndots:5/ndots:1/", "/etc/resolv.conf"]
 postgres:
   enabled: true
   auth:
