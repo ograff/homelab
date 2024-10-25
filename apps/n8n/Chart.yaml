@@ -6,6 +6,6 @@ dependencies:
     version: 0.25.2
     repository: oci://8gears.container-registry.com/library
   - name: postgresql
-    version: 14.0.5
+    version: 16.0.6
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
