@@ -16,7 +16,7 @@ n8n:
   # Set additional environment from existing secrets
   extraEnvSecrets:
     DB_POSTGRESDB_PASSWORD:
-      name: n8n-postgresql
+      name: n8n-postgresql2
       key: postgres-password
 
   ## Common Kubernetes Config Settings
@@ -90,7 +90,7 @@ n8n:
 postgres:
   enabled: true
   auth:
-    existingSecret: postgres-user-auth
+    existingSecret: n8n-postgresql2
     secretKeys:
       adminPasswordKey: postgres-password
   primary:
