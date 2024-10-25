@@ -82,7 +82,7 @@ n8n:
     hosts:
       - host: *host
         paths:
-          - path: /
+          - /
     tls:
       - hosts:
           - *host
