@@ -1,0 +1,7 @@
+apiVersion: v2
+name: changedetection
+version: 0.0.0
+dependencies:
+  - name: changedetection-io
+    version: 0.12.0
+    repository: https://charts.gabe565.com
