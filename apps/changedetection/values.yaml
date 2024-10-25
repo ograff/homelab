@@ -56,8 +56,8 @@ changedetection-io:
       mountPath: /datastore
       retain: true
       # storageClass: ""
-      # accessMode: ReadWriteOnce
-      # size: 1Gi
+      accessMode: ReadWriteOnce
+      size: 1Gi
 
   browserless:
     # -- Enable Browserless sidecar
