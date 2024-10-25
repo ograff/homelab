@@ -86,6 +86,11 @@ postgres:
   enabled: true
   auth:
     postgresPassword: foobar
+    enablePostgresUser: true
+    username: test_user
+    password: test_password
+    database: test_database
+    replicationUsername: test_repl_user
   primary:
     persistence:
       enabled: true
