@@ -53,7 +53,7 @@ paperless-ngx:
       mountPath: /usr/src/paperless/data
       # storageClass: ""
       accessMode: ReadWriteOnce
-      size: 1Gi
+      size: 4Gi
     # -- Configure media volume settings for the chart under this key.
     # @default -- See [values.yaml](./values.yaml)
     media:
@@ -79,7 +79,7 @@ paperless-ngx:
       retain: true
       mountPath: /usr/src/paperless/consume
       # storageClass: ""
-      accessMode: ReadWriteOnce
+      accessMode: ReadWriteMany
       size: 4Gi
 
   # -- Enable and configure postgresql database subchart under this key.
