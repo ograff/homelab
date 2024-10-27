@@ -135,3 +135,27 @@ paperless-ngx:
     replica:
       replicaCount: 0
 
+app-template:
+  controllers:
+    main:
+      containers:
+        main:
+          image:
+            repository: ghcr.io/ograff/sftp-paperless-bridge:latest
+            tag: 0.1.1
+          env:
+            URL: http://paperless-paperless-ngx:8000/
+          envFrom:
+            - secretRef:
+              name: sftp-connector-secrets
+  service:
+    main:
+      ports:
+        sftp:
+          port: 2222
+          type: LoadBalancer
+          annotations:
+            external-dns.alpha.kubernetes.io/hostname: scan-to-paperless.2411.house
+  ingress:
+    main:
+      enabled: false
