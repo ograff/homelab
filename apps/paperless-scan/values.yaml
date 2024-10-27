@@ -7,7 +7,7 @@ app-template:
             repository: ghcr.io/ograff/sftp-paperless-bridge
             tag: 0.1.1
           env:
-            URL: http://paperless-paperless-ngx.paperless:8000/
+            API_URL: http://paperless-paperless-ngx.paperless:8000/
             API_KEY:
               valueFrom:
                 secretKeyRef:
