@@ -3,6 +3,13 @@ app-template:
     main:
       containers:
         main:
+          probes:
+            liveness:
+              enabled: false
+            readiness:
+              enabled: false
+            startup:
+              enabled: false
           image:
             repository: ghcr.io/ograff/sftp-paperless-bridge
             tag: 0.1.1
