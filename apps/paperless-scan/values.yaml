@@ -43,6 +43,7 @@ app-template:
           enabled: false
           port: 0
         sftp:
+          nodePort: 2222
           enabled: true
           primary: true
           protocol: TCP
