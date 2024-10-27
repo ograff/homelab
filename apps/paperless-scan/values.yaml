@@ -40,5 +40,5 @@ app-template:
             external-dns.alpha.kubernetes.io/hostname: scan-to-paperless.2411.house
   ingress:
     main:
-      enabled: true
+      enabled: false
       hosts: []
