@@ -4,25 +4,41 @@ app-template:
       containers:
         main:
           image:
-            repository: ghcr.io/ograff/sftp-paperless-bridge:latest
+            repository: ghcr.io/ograff/sftp-paperless-bridge
             tag: 0.1.1
           env:
             URL: http://paperless-paperless-ngx.paperless:8000/
-          envFrom:
-            - secretRef:
-              name: sftp-connector-secrets
+            API_KEY:
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-connector-secrets
+                  key: API_KEY
+            HOST_KEY:
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-connector-secrets
+                  key: HOST_KEY
+            SFTP_PASS:
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-connector-secrets
+                  key: SFTP_PASS
   service:
     main:
+      type: LoadBalancer
       ports:
+        http:
+          enabled: false
+          port: 0
         sftp:
           enabled: true
           primary: true
           protocol: TCP
           port: 22
           targetPort: 2222
-          type: LoadBalancer
           annotations:
             external-dns.alpha.kubernetes.io/hostname: scan-to-paperless.2411.house
   ingress:
     main:
-      enabled: false
+      enabled: true
+      hosts: []
