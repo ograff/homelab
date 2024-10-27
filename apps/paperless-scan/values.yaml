@@ -33,6 +33,8 @@ app-template:
   service:
     main:
       type: LoadBalancer
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: scan-to-paperless.2411.house
       ports:
         http:
           enabled: false
@@ -43,8 +45,6 @@ app-template:
           protocol: TCP
           port: 22
           targetPort: 2222
-          annotations:
-            external-dns.alpha.kubernetes.io/hostname: scan-to-paperless.2411.house
   ingress:
     main:
       enabled: false
