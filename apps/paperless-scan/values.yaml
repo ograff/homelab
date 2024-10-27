@@ -1,4 +1,7 @@
 app-template:
+  defaultPodOptions:
+    nodeSelector:
+      kubernetes.io/hostname: ograff-linux-mini
   controllers:
     main:
       containers:
@@ -32,7 +35,7 @@ app-template:
                   key: SFTP_PASS
   service:
     main:
-      type: LoadBalancer
+      type: NodePort
       annotations:
         external-dns.alpha.kubernetes.io/hostname: scan-to-paperless.2411.house
       ports:
@@ -43,7 +46,7 @@ app-template:
           enabled: true
           primary: true
           protocol: TCP
-          port: 22
+          port: 2222
           targetPort: 2222
   ingress:
     main:
