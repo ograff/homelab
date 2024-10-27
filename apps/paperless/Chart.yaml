@@ -5,6 +5,3 @@ dependencies:
   - name: paperless-ngx
     version: 0.19.1
     repository: https://charts.gabe565.com
-  - name: app-template
-    version: 1.5.1
-    repository: https://bjw-s.github.io/helm-charts
