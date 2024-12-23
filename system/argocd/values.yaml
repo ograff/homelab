@@ -19,6 +19,14 @@ argo-cd:
         external-dns.alpha.kubernetes.io/target: "tunnel.2411.house"
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       tls: true
+      hosts:
+        - host: &host argocd.2411.house
+          paths:
+            - path: /
+      tls:
+        - hosts:
+            - *host
+          secretName: argocd-tls-secret
     metrics: &metrics
       enabled: true
       serviceMonitor:
