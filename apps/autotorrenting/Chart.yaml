@@ -35,4 +35,4 @@ dependencies:
   repository: https://geek-cookbook.github.io/charts/
 - name: qbittorrent
   version: 0.4.0
-  repository: https://charts.gabe565.com/charts/
+  repository: https://charts.gabe565.com
