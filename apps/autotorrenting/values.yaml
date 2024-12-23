@@ -384,7 +384,7 @@ qbittorrent:
 
   image:
     # -- image repository
-    repository: ghcr.io/linuxserver/qbittorrent
+    repository: linuxserver/qbittorrent
     # -- image pull policy
     pullPolicy: IfNotPresent
     # -- image tag
@@ -395,6 +395,7 @@ qbittorrent:
   env:
     # -- Set the container timezone
     TZ: UTC
+    DOCKER_MODS: ghcr.io/gabe565/linuxserver-mod-vuetorrent
 
   # -- Configures service settings for the chart.
   # @default -- See [values.yaml](./values.yaml)
@@ -465,5 +466,8 @@ qbittorrent:
       # storageClass: ""
       # accessMode: ReadWriteOnce
       # size: 10Gi
+    vuetorrent:
+      enabled: true
+      type: emptyDir
 
 
