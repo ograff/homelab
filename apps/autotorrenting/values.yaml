@@ -469,8 +469,9 @@ qbittorrent:
     vuetorrent:
       enabled: true
       type: emptyDir
-  dnsConfig:
-    options:
-      - name: ndots
-        value: "1"
+  defaultPodOptions:
+    dnsConfig:
+      options:
+        - name: ndots
+          value: "1"
 
