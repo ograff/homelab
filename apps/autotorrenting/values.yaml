@@ -375,6 +375,15 @@ audiobookshelf:
       - name: ndots
         value: "1"
 qbittorrent:
+  defaultPodOptions:
+    dnsConfig:
+      options:
+        - name: ndots
+          value: "1"
+  dnsConfig:
+    options:
+      - name: ndots
+        value: "1"
   #
   # IMPORTANT NOTE
   #
@@ -469,9 +478,3 @@ qbittorrent:
     vuetorrent:
       enabled: true
       type: emptyDir
-  defaultPodOptions:
-    dnsConfig:
-      options:
-        - name: ndots
-          value: "1"
-
