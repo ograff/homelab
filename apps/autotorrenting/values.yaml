@@ -255,7 +255,7 @@ readarr-audio:
 calibre:
   image:
     repository: lscr.io/linuxserver/calibre
-    tag: 7.12.0
+    tag: 7.23.0
   ingress:
     main:
       enabled: true
