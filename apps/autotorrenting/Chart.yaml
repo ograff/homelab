@@ -33,6 +33,7 @@ dependencies:
 - name: audiobookshelf
   version: 1.2.2
   repository: https://geek-cookbook.github.io/charts/
-- name: qbittorrent
-  version: 0.4.0
-  repository: https://charts.gabe565.com
+- name: external-service
+  version: 1.0.8
+  repository: https://charts.philippwaller.com/
+  alias: qbit
