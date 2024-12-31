@@ -218,6 +218,8 @@ calibre-web:
   image:
     repository: crocodilestick/calibre-web-automated
     tag: V2.1.2
+  env:
+    - DOCKER_MODS=lscr.io/linuxserver/mods:universal-calibre-v7.23.0
   ingress:
     main:
       enabled: true
