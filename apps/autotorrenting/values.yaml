@@ -176,44 +176,6 @@ bazarr:
       - name: ndots
         value: "1"
 
-readarr:
-  image:
-    repository: lscr.io/linuxserver/readarr
-    tag: nightly-version-0.4.7.2715
-  ingress:
-    main:
-      enabled: true
-  persistence:
-    config:
-      enabled: true
-      retain: true
-      size: 4Gi
-    media: *media_mount
-
-  ingress:
-    main:
-      enabled: true
-      ingressClassName: nginx
-      annotations:
-        external-dns.alpha.kubernetes.io/target: "tunnel.2411.house"
-        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        hajimari.io/appName: Readarr
-        #hajimari.io/icon: file-document
-        nginx.ingress.kubernetes.io/proxy-body-size: "0"
-      hosts:
-        - host: &readarr_host readarr.2411.house
-          paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - secretName: readarr-tls-certificate
-          hosts:
-            - *readarr_host
-  dnsConfig:
-    options:
-      - name: ndots
-        value: "1"
 readarr-audio:
   image:
     repository: lscr.io/linuxserver/readarr
@@ -248,47 +210,6 @@ readarr-audio:
         - secretName: readarr-audio-tls-certificate
           hosts:
             - *readarr_audio_host
-  dnsConfig:
-    options:
-      - name: ndots
-        value: "1"
-calibre:
-  image:
-    repository: lscr.io/linuxserver/calibre
-    tag: 7.23.0
-  ingress:
-    main:
-      enabled: true
-  persistence:
-    config:
-      enabled: true
-      retain: true
-      size: 4Gi
-    media: *media_mount
-  service:
-    webserver:
-      enabled: true
-
-  ingress:
-    main:
-      enabled: true
-      ingressClassName: nginx
-      annotations:
-        external-dns.alpha.kubernetes.io/target: "tunnel.2411.house"
-        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        hajimari.io/appName: Calibre Server
-        #hajimari.io/icon: file-document
-        nginx.ingress.kubernetes.io/proxy-body-size: "0"
-      hosts:
-        - host: &calibre_server_host calibre-server.2411.house
-          paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - secretName: calibre-server-tls-certificate
-          hosts:
-            - *calibre_server_host
   dnsConfig:
     options:
       - name: ndots

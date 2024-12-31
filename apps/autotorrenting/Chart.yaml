@@ -18,14 +18,8 @@ dependencies:
   version: 10.6.2
   repository: https://geek-cookbook.github.io/charts/
 - name: readarr
-  version: 6.4.2
-  repository: https://geek-cookbook.github.io/charts/
-- name: readarr
   alias: readarr-audio
   version: 6.4.2
-  repository: https://geek-cookbook.github.io/charts/
-- name: calibre
-  version: 5.4.2
   repository: https://geek-cookbook.github.io/charts/
 - name: calibre-web
   version: 8.4.2
