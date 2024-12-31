@@ -216,8 +216,8 @@ readarr-audio:
         value: "1"
 calibre-web:
   image:
-    repository: lscr.io/linuxserver/calibre-web
-    tag: version-0.6.20
+    repository: crocodilestick/calibre-web-automated
+    tag: V2.1.2
   ingress:
     main:
       enabled: true
@@ -227,6 +227,13 @@ calibre-web:
       retain: true
       size: 4Gi
     media: *media_mount
+    ingest:
+      enabled: true
+      retain: true
+      mountPath: /cwa-book-ingest
+      type: nfs
+      server: 192.168.45.3
+      path: /MainPool/BigTank/MediaAndTorrents/cwa-book-ingest
 
   ingress:
     main:
