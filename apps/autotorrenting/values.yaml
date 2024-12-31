@@ -218,6 +218,15 @@ calibre-web:
   image:
     repository: crocodilestick/calibre-web-automated
     tag: V2.1.2
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/arch
+            operator: In
+            values:
+            - arm64
   env:
     DOCKER_MODS: lscr.io/linuxserver/mods:universal-calibre-v7.23.0
   ingress:
