@@ -228,7 +228,7 @@ calibre-web:
       enabled: true
       retain: true
       size: 4Gi
-    media: &media_mount
+    books:
       enabled: true
       retain: true
       mountPath: /calibre-library
