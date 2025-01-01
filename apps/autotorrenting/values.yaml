@@ -128,15 +128,6 @@ flaresolverr:
     options:
       - name: ndots
         value: "1"
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/arch
-            operator: In
-            values:
-            - amd64
 bazarr:
   image:
     repository: lscr.io/linuxserver/bazarr
