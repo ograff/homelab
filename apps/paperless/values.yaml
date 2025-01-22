@@ -14,6 +14,8 @@ paperless-ngx:
     TZ: America/Los_Angeles
     # PAPERLESS_SECRET_KEY: ""
     PAPERLESS_DATE_ORDER: MDY
+    PAPERLESS_ENABLE_HTTP_REMOTE_USER: true
+    PAPERLESS_HTTP_REMOTE_USER_HEADER_NAME: Cf-Access-Authenticated-User-Email
 
   service:
     # -- Configures service settings for the chart.
