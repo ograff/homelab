@@ -208,7 +208,7 @@ readarr-audio:
 calibre-web:
   image:
     repository: crocodilestick/calibre-web-automated
-    tag: V2.1.2
+    tag: V3.0.3
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -218,8 +218,6 @@ calibre-web:
             operator: In
             values:
             - arm64
-  env:
-    DOCKER_MODS: lscr.io/linuxserver/mods:universal-calibre-v7.23.0
   ingress:
     main:
       enabled: true
