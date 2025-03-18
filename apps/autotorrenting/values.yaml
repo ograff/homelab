@@ -225,7 +225,7 @@ calibre-web:
     config:
       enabled: true
       retain: true
-      size: 4Gi
+      size: 20Gi
     books:
       enabled: true
       retain: true
